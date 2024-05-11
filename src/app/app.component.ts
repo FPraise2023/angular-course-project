@@ -10,6 +10,5 @@ export class AppComponent {
 
   onPageSelected(pageName: string) {
     this.pageToDisplay = pageName;
-    console.log(this.pageToDisplay);
   }
 }

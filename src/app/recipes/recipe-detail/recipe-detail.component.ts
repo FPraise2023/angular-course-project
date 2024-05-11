@@ -20,7 +20,6 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   toShoppingList() {
-    console.log(this.selectedRecipe.ingredients);
     this.shoppingListService.onIngredientsTransfered(this.selectedRecipe.ingredients)
   }
 }
