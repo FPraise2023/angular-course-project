@@ -1,7 +1,6 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Recipe} from "./recipe.model";
 import {Ingredient} from "../shared/ingredient.model";
-import {findIndex} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -43,18 +42,10 @@ export class RecipeService {
       ])
   ];
 
-  selectRecipe = new EventEmitter<Recipe>();
   constructor() { }
 
   getRecipes() {
     return this.recipes.slice();
   }
 
-  getRecipeId(recipe: Recipe) {
-    return this.recipes.findIndex((r) => r === recipe)
-  }
-
-  onRecipeSelected(recipe: Recipe){
-    this.selectRecipe.emit(recipe);
-  }
 }
